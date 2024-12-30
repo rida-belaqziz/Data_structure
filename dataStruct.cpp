@@ -3,7 +3,7 @@
 #include <queue> //La queue (file) suit le principe FIFO (First In, First Out), c'est-à-dire que le premier élément ajouté est le premier à être retiré.
 #include <deque> //La deque (double-ended queue) permet d'ajouter et de retirer des éléments des deux côtés (avant et arrière).
 #include <vector> //Le vector est un tableau dynamique capable de redimensionner automatiquement sa taille
-
+#include <list> //La std::list est une structure de données fournie par la bibliothèque standard C++ pour implémenter une liste chaînée (doubly linked list). Elle permet une insertion, une suppression, et un accès bidirectionnel efficaces.
 
 using namespace std;
 
@@ -93,7 +93,8 @@ int main() {
 
     cout << "Après pop, premier élément : " << MyDeque.front() << std::endl;
     cout << "Après pop, dernier élément : " << MyDeque.back() << std::endl;
-
+    cout << " " << std::endl;
+    cout << " " << std::endl;
 
     //=================================================================
     //=================================================================
@@ -121,6 +122,39 @@ int main() {
     // Accéder directement à un élément
     cout << "Premier élément : " << Myvector.front() << std::endl;
     cout << "Dernier élément : " << Myvector.back() << std::endl;
+    cout << " " << std::endl;
+    cout << " " << std::endl;
+    //=================================================================
+    //=================================================================
+    //List
+    cout<<"List"<<endl;
+    list<int> MyListe = {1, 2, 3, 4};
 
+    // Ajouter des éléments
+    MyListe.push_back(5);
+    MyListe.push_front(0);
+
+    // Afficher les éléments
+    cout << "Éléments de la liste : ";
+    for (int val : MyListe) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    // Supprimer un élément spécifique
+    MyListe.remove(3);
+
+    // Trier et inverser la liste
+    MyListe.sort();
+    MyListe.reverse();
+
+    cout << "Liste après tri et inversion : ";
+    for (int val : MyListe) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    cout << "Premier élément : " << MyListe.front() << endl;
+    cout << "Dernier élément : " << MyListe.back() << endl;
     return 0;
 }
